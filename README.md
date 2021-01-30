@@ -27,7 +27,7 @@ const firstEmailHeader = inbox.emailHeaders[0];
 //Retrieve the whole email, including body
 const firstEmail = await inbox.getEmail(firstEmailHeader.id);
 
-//Waits for new emails from ana@gmail.com
+//Wait for new emails from ana@gmail.com
 const futureEmails = await inbox.waitForEmailsFrom("ana@gmail.com", 15000);
 
 //Iterate over the headers of the new emails from ana
