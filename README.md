@@ -53,14 +53,15 @@ not the full email, only metadata. You need to call **getEmail()**
 to load the body and any additional data.
 
 ### .refresh()
-#### **ASYNC**
 
+**ASYNC**  
 Obligatory to call before trying to access emails, as this
 loads the initial email headers. You can call this anytime
 to refresh the inbox with new emails.
 
 ### .getEmail(id: string): Email
 
+**ASYNC**  
 Retrieves the whole email with the given id. Use the id from
 **emailHeaders**.
 
@@ -70,8 +71,8 @@ Return a list of all the email headers from the specified address.
 Does not refresh the emails.
 
 ### .waitForEmailsFrom(address: string, timeout: number): Promise<EmailHeader[]>
-#### **ASYNC**
 
+**ASYNC**  
 Poll for new emails from the given address. Waits until timeout runs out.
 Returns after the first encounter of a new mail.
 Returns a list because there may be multiple new emails.
