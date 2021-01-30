@@ -120,3 +120,7 @@ class Email {
 	mailinatorMail: MailinatorEmail;
 }
 ```
+
+## License
+
+[MIT](LICENSE)
