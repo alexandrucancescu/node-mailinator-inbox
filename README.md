@@ -61,7 +61,7 @@ to refresh the inbox with new emails.
 
 ### .getEmail(id: string): Email
 
-Retrieves the whole email with the id given. Use the id from
+Retrieves the whole email with the given id. Use the id from
 **emailHeaders**.
 
 ### .getEmailsFrom(address: string): EmailHeader[]
