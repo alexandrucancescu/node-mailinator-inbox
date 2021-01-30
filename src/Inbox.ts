@@ -101,6 +101,7 @@ export default class Inbox {
 	private rejectPromise(error: Error) {
 		if(!this.settled) {
 			this.settled = true;
+			console.log("Before delete",this,this.emailHeaders);
 			this._emailHeaders = null;
 			if(this.websocket != null) {
 				this.websocket.close();
