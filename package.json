@@ -1,6 +1,6 @@
 {
   "name": "mailinator-inbox",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "main": "dist/index.js",
   "description": "Node.js mailinator client to access a public disposable inbox and read emails. Does not require token",
