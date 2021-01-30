@@ -1,0 +1,11 @@
+node_modules
+.idea
+
+dist/Test.*
+src/Test.*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
