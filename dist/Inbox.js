@@ -105,7 +105,7 @@ class Inbox {
     messageHandler(data) {
         const msg = JSON.parse(data);
         if ("fromfull" in msg) {
-            this._emailHeaders.push(msg);
+            this.addEmailHeader(msg);
         }
         else if ("original_query" in msg) {
             if (this.wsHeaderReceived) {
@@ -117,7 +117,7 @@ class Inbox {
         }
     }
     addEmailHeader(mailinatorHeader) {
-        this.emailHeaders.push({
+        this._emailHeaders.push({
             id: mailinatorHeader.id,
             fromEmail: mailinatorHeader.fromfull,
             fromName: mailinatorHeader.from,
