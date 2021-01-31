@@ -10,8 +10,8 @@ export default class Inbox {
     private promiseCallbacks;
     constructor(username: string);
     refresh(): Promise<void>;
-    waitForEmailsFrom(address: string, timeout?: number): Promise<EmailHeader[]>;
-    getEmailsFrom(address: string): EmailHeader[];
+    waitForEmailsFrom(address: string | RegExp, timeout?: number): Promise<EmailHeader[]>;
+    getEmailsFrom(address: string | RegExp): EmailHeader[];
     getEmail(id: string): Promise<Email>;
     private loadInbox;
     private createSocket;

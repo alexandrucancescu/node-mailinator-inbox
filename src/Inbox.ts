@@ -30,7 +30,7 @@ export default class Inbox {
 		await this.loadInbox();
 	}
 
-	public async waitForEmailsFrom(address: string, timeout: number = 15000): Promise<EmailHeader[]> {
+	public async waitForEmailsFrom(address: string | RegExp, timeout: number = 15000): Promise<EmailHeader[]> {
 		const startTime = Date.now();
 		const already = this.getEmailsFrom(address);
 		while(Date.now() - startTime < timeout){
@@ -45,8 +45,14 @@ export default class Inbox {
 		return null;
 	}
 
-	public getEmailsFrom(address: string): EmailHeader[] {
-		return this.emailHeaders.filter(eh => eh.fromEmail === address);
+	public getEmailsFrom(address: string | RegExp): EmailHeader[] {
+		return this.emailHeaders?.filter(eh => {
+			if(address instanceof RegExp){
+				return address.test(eh.fromEmail);
+			}else{
+				return eh.fromEmail === address;
+			}
+		}) ?? [];
 	}
 
 	public async getEmail(id: string): Promise<Email> {

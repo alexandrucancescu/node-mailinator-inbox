@@ -30,7 +30,15 @@ class Inbox {
         return null;
     }
     getEmailsFrom(address) {
-        return this.emailHeaders.filter(eh => eh.fromEmail === address);
+        var _a, _b;
+        return (_b = (_a = this.emailHeaders) === null || _a === void 0 ? void 0 : _a.filter(eh => {
+            if (address instanceof RegExp) {
+                return address.test(eh.fromEmail);
+            }
+            else {
+                return eh.fromEmail === address;
+            }
+        })) !== null && _b !== void 0 ? _b : [];
     }
     async getEmail(id) {
         var _a;
