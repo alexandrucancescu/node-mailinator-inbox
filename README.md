@@ -70,14 +70,14 @@ Retrieves the whole email with the given id. Use the id from
 Return a list of all the email headers from the specified address.
 Does not refresh the emails.
 
-### .waitForEmailsFrom(address: string, timeout: number): Promise<EmailHeader[]>
+### .waitForEmailsFrom(address: string | RegExp, timeout: number): Promise<EmailHeader[]>
 
 **ASYNC**  
-Poll for new emails from the given address. Waits until timeout runs out.
-Returns after the first encounter of a new mail.
-Returns a list because there may be multiple new emails.
-
-Returns the new email headers or **null** if timed out.
+Poll for new emails from the given address, can be a regex.
+Waits until timeout runs out.
+Stops after the first encounter of a new mail.
+Returns a list of email headers because there may be 
+multiple new emails, or **null** if timed out.
 
 ### **EmailHeader**
 
